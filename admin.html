@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/admin.css">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+    <title>Document</title>
+</head>
+<body class="bg-[#F8F8F8]">
+    
+    <div class="flex">
+        <nav class="w-[25%] bg-white shadow-md h-[100vh]">
+            <div class="border-b-[2px] py-[34px] px-[15px] border-teal-500">
+                <h2 class="text-teal-500 font-bold text-[22px]">INTEX-MARKET.UZ</h2>
+            </div>
+
+            <ul class="flex flex-col px-[34px] py-[20px] cursor-pointer text-[20px] text-teal-500">
+                <li>Продукты</li>
+            </ul>
+        </nav>
+
+        <div class="w-[100%]">
+            <div class="border-b-[2px] py-[34px] px-[40px] border-teal-500 flex items-center justify-end">
+                <a class="text-teal-500 font-bold text-[22px]" href="/">Просмотр веб-сайта</a>
+            </div>
+
+            <div class="flex items-center justify-between p-5">
+                <input class="p-[11px] rounded-[25px] w-[377px] border-[1px] border-black" type="text" placeholder="Найти">
+                <button class="add-button font-bold bg-teal-500 text-white text-[18px] w-[210px] rounded-[25px] p-3 hover:opacity-[0.8]">+ Добавить продукт</button>
+            </div>
+
+            <ul class="nav-list flex items-center justify-center gap-10 p-5">
+                <li id="0" class="item1 cursor-pointer font-bold text-teal-500 text-[22px]">Каркасные</li>
+                <li id="1" class="item2 cursor-pointer font-bold text-slate-500 text-[22px]">Надувные</li>
+            </ul>
+
+            <table class="m-auto">
+                <thead>
+                    <tr>
+                        <th class="bg-slate-200 w-[200px] p-3 rounded-l-[20px]">Изображение</th>
+                        <th class="bg-slate-200 w-[200px] p-3">Цена(сум)</th>
+                        <th class="bg-slate-200 w-[200px] p-3">Количество</th>
+                        <th class="bg-slate-200 w-[200px] p-3">Статус</th>
+                        <th class="bg-slate-200 w-[200px] p-3 rounded-r-[20px]">Действия</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody translate-y-[10px]">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="modal-wrapper" id="modal-wrapper">
+        <div class="modal"></div>
+    </div>
+
+</body>
+<script src="./js/admin.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+</html>
