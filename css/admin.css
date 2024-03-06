@@ -1,4 +1,10 @@
+/* Basic codes start  */
+
 * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
     box-sizing: border-box;
 }
 
@@ -9,12 +15,17 @@
     margin: -1px;
     border: 0;
     padding: 0;
-    
     white-space: nowrap;
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+body {
+    background-color: #F8F8F8;
+}
+
+/* Basic codes end  */
 
 .modal-wrapper {
     position: fixed;
@@ -25,6 +36,7 @@
     backdrop-filter: blur(10px);
     display: none;
     border-radius: 20px;
+    z-index: 50;
 }
 
 .modal {
@@ -44,3 +56,175 @@
     left: 0;
     backdrop-filter: blur(10px);
 }
+
+/* Admin styles start  */
+
+.admin-wrapper {
+    display: flex;
+}
+
+.admin-navbar {
+    width: 25%;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)
+}
+
+.admin__title-wrapper {
+    border-bottom-width: 2px;
+    padding: 34px 15px;
+    border-color: rgb(20 184 166);
+}
+
+.admin__title {
+    color: rgb(20 184 166);
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.admin-list {
+    padding: 20px 34px;
+    font-size: 25px;
+    color: rgb(180, 180, 198);;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.admin__list-item {
+    color: rgb(20, 184, 166);
+}
+
+.admin-top {
+    width: 100%;
+}
+
+.admin-top-content {
+    padding: 34px 40px;
+    border-bottom-width: 2px;
+    border-color: rgb(20 184 166);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.admin__top-link-wrapper {
+    margin-left: 20px;
+    border-left: 3px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contactus-icon {
+    margin-left: 20px;
+}
+
+.admin__top-link {
+    color: rgb(166, 166, 166);
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.admin-buttons {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin__search-input {
+    position: relative;
+    z-index: 49;
+}
+
+.admin__search {
+    width: 377px;
+    padding: 15px;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    position: relative;
+    z-index: 40;
+
+    &&:focus {
+        outline: none;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.search-list {
+    width: 50%;
+    padding: 10px;
+    position: absolute;
+    border-radius: 20px;
+    background-color: teal;
+    z-index: 10;
+    margin: auto;
+    transform: scale(0);
+    transition: transform 0.3s linear;
+    opacity: 0;
+}
+
+.open-list {
+    width: 100%;
+    opacity: 1;
+    color: white;
+    cursor: pointer;
+    padding: 15px 10px;
+    transform: scale(1);
+}
+
+.admin__Add {
+    width: 222px;
+    padding: 18px 0;
+    border-radius: 29px;
+    box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.25);
+    background: rgb(0, 147, 152);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    transition: opacity 0.4s ease;
+
+    &&:hover  {
+        opacity: 0.7;
+    }
+}
+
+.admin__list2 {
+    padding: 40px 0 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.admin__list2-item {
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.admin__table {
+    margin: auto;
+}
+
+.admin__table-head {
+    width: 180px;
+    padding: 20px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.table-body {
+    transform: translateY(10px);
+}
+
+/* .update-btn {
+    border: none;
+    background-color: none;
+} */
+/* Admin styles start  */

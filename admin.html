@@ -11,53 +11,65 @@
           }
         }
       </style>
-    <title>Document</title>
+    <title>Intex admin</title>
 </head>
-<body class="bg-[#F8F8F8]">
+<body>
     
-    <div class="flex">
-        <nav class="w-[25%] bg-white shadow-md h-[100vh]">
-            <div class="border-b-[2px] py-[34px] px-[15px] border-teal-500">
-                <h2 class="text-teal-500 font-bold text-[22px]">INTEX-MARKET.UZ</h2>
+    <div class="admin-wrapper">
+        <nav class="admin-navbar navbar">
+            <div class="admin__title-wrapper">
+                <h2 class="admin__title">INTEX-MARKET.UZ</h2>
             </div>
 
-            <ul class="flex flex-col px-[34px] py-[20px] cursor-pointer text-[20px] text-teal-500">
-                <li>Продукты</li>
+            <ul class="admin-list list">
+                <li class="admin__list-item">Продукты</li>
+                <li>Заказы</li>
+                <li>Категории</li>
+                <li>Сайт</li>
             </ul>
         </nav>
 
-        <div class="w-[100%]">
-            <div class="border-b-[2px] py-[34px] px-[40px] border-teal-500 flex items-center justify-end">
-                <a class="text-teal-500 font-bold text-[22px]" href="/">Просмотр веб-сайта</a>
+        <div class="admin-top">
+            <div class="admin-top-content">
+                <a class="admin__top-link" href="./index.html" target="blank" href="/">Просмотр веб-сайта</a>
+                <div class="admin__top-link-wrapper">
+                  <img class="contactus-icon" src="./images/admin-contact.svg" alt="Contact us" width="18" height="22">
+                  <a class="admin__top-link" href="mailto:joemelton@mail.ru">Joe Melton</a>
+                </div>
             </div>
 
-            <div class="flex items-center justify-between p-5">
-                <input class="p-[11px] rounded-[25px] w-[377px] border-[1px] border-black" type="text" placeholder="Найти">
-                <button class="add-button font-bold bg-teal-500 text-white text-[18px] w-[210px] rounded-[25px] p-3 hover:opacity-[0.8]">+ Добавить продукт</button>
+            <div class="admin-buttons">
+                <div class="admin__search-input">
+                  <input class="admin__search search-input" type="text" placeholder="Найти">
+                  <ul class="search-list"></ul>
+                </div>
+                <div>
+                  <button class="admin__Add add-button">+ Добавить продукт</button>
+                </div>
             </div>
 
-            <ul class="nav-list flex items-center justify-center gap-10 p-5">
-                <li id="0" class="item1 cursor-pointer font-bold text-teal-500 text-[22px]">Каркасные</li>
-                <li id="1" class="item2 cursor-pointer font-bold text-slate-500 text-[22px]">Надувные</li>
+            <ul class="admin__list2 nav-list">
+                <li id="0" class="admin__list2-item item1 text-teal-500">Каркасные</li>
+                <li id="1" class="admin__list2-item item2">Надувные</li>
             </ul>
 
-            <table class="m-auto">
+            <table class="admin__table">
                 <thead>
                     <tr>
-                        <th class="bg-slate-200 w-[200px] p-3 rounded-l-[20px]">Изображение</th>
-                        <th class="bg-slate-200 w-[200px] p-3">Цена(сум)</th>
-                        <th class="bg-slate-200 w-[200px] p-3">Количество</th>
-                        <th class="bg-slate-200 w-[200px] p-3">Статус</th>
-                        <th class="bg-slate-200 w-[200px] p-3 rounded-r-[20px]">Действия</th>
+                        <th class="admin__table-head rounded-l-[20px]">Изображение</th>
+                        <th class="admin__table-head">Именование</th>
+                        <th class="admin__table-head">Цена(сум)</th>
+                        <th class="admin__table-head">Количество</th>
+                        <th class="admin__table-head">Статус</th>
+                        <th class="admin__table-head rounded-r-[20px]">Действия</th>
                     </tr>
                 </thead>
-                <tbody class="tbody translate-y-[10px]">
+                <tbody class="table-body tbody">
 
                 </tbody>
             </table>
         </div>
     </div>
-
 
     <div class="modal-wrapper" id="modal-wrapper">
         <div class="modal"></div>
