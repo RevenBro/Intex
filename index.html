@@ -3,9 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/ui.css">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
     <title>INTEX MARKET</title>
 </head>
 <body>
     
+    <!-- Site header start -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header">
+                <a class="header__logo-link" href="/">
+                    <b class="header__logo-title">INTEX-MARKET.UZ</b>
+                </a>
+
+                <nav class="header__navbar navbar">
+                    <ul class="navbar__list">
+                        <li class="navbar__item">
+                            <a class="navbar__link" href="#karkasniy">Каркасные бассейны</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a class="navbar__link" href="#naduvniy">Надувные бассейны</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header__right-content">
+                    <a class="header__call" href="tel:+998999110204">(99) 911 02 04</a>
+                    <div class="header__right-link">
+                        <a class="tg-icon-wrapper" href="/">
+                            <img class="tg-icon" src="./images/header-tg-icon.svg" alt="telegram icon" width="26" height="26">
+                        </a>
+                        <a class="insta-icon-wrapper" href="/">
+                            <img class="insta-icon" src="./images/header-insta-icon.svg" alt="instagram icon" width="26" height="26">
+                        </a>
+                        <a class="header__lang" href="#">RU</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Site header end -->
+
+    <!-- Site main start -->
+    <main class="site-main">
+
+        <!-- Hero section start  -->
+        <section class="hero-section">
+            <div class="hero">
+                <img src="./images/hero-img.png" alt="Hero img" width="100%" height="1110px">
+            </div>
+        </section>
+        <!-- Hero section end -->
+
+        <!-- Sale section start -->
+        <section class="sale-section">
+            <div class="sale-top-wrapper">
+                <h2 class="sale-top-title">Сезонная распродажа!</h2>
+            </div>
+            <div class="container">
+                <div class="sale">
+                    <div class="sale__card-wrapper">
+                        <div class="sale__card">
+                            <number class="sale__card-number">1</number>
+                            <div class="sale__card-inner">
+                                <h3 class="sale__card-title">Бесплатная доставка бассейна</h3>
+                                <p class="sale__card-text">Мы ценим наших клиентов, можете быть уверены в качестве нашего сервиса!</p>
+                            </div>
+                        </div>
+
+                        <div class="sale__card">
+                            <number class="sale__card-number">2</number>
+                            <div class="sale__card-inner">
+                                <h3 class="sale__card-title">Специальная химия в подарок</h3>
+                                <p class="sale__card-text">Специальная очищающая химия для бассейна - бесплатно</p>
+                            </div>
+                        </div>
+
+                        <div class="sale__card">
+                            <number class="sale__card-number">3</number>
+                            <div class="sale__card-inner">
+                                <h3 class="sale__card-title">Гарантия качества</h3>
+                                <p class="sale__card-text">Вся продукция INTEX является оригинальной</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sale section end -->
+
+        <!-- Karkasniy section start  -->
+        <section id="karkasniy" class="karkasniy-section">
+            <div class="karkasniy-top">
+                <h2 class="karkasniy-top-title">Каркасные бассейны</h2>
+            </div>
+            <div class="container">
+                <ul class="karkasniy-list"></ul>
+            </div>
+        </section>
+        <!-- Karkasniy section end -->
+
+        <!-- Naduvniy section start  -->
+        <section id="naduvniy" class="naduvniy-section">
+            <div class="naduvniy-top">
+                <h2 class="naduvniy-top-title">Надувные бассейны</h2>
+            </div>
+            <div class="container">
+                <ul class="naduvniy-list"></ul>
+            </div>
+        </section>
+        <!-- Navuyniy section end -->
+
+    </main>
+    <!-- Site main end -->
+
+    <div id="modal-wrapper" class="modal-wrapper">
+        <div class="modal"></div>
+    </div>
+
 </body>
+<script src="./js/ui.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
 </html>

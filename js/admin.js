@@ -1,5 +1,6 @@
 
 let elAddBtn = document.querySelector(".add-button")
+let tHead = document.querySelector(".thead")
 let tBody = document.querySelector(".tbody")
 
 let elModalWrapper = document.querySelector(".modal-wrapper")
@@ -7,6 +8,8 @@ let elModal = document.querySelector(".modal")
 
 let elSearchInput = document.querySelector(".search-input")
 let elSearchList = document.querySelector(".search-list")
+
+let orderProduct = JSON.parse(window.localStorage.getItem("orderList")) || []
 
 
 let products = JSON.parse(window.localStorage.getItem("products")) || []
@@ -114,19 +117,29 @@ elModalWrapper.addEventListener("click", function(evt) {
 let elNavList = document.querySelector(".nav-list")
 let elItem1 = document.querySelector(".item1")
 let elItem2 = document.querySelector(".item2")
+let elItem3 = document.querySelector(".item3")
 
 elNavList.addEventListener("click", function(evt) {
     if(evt.target.id) {
         if(evt.target.id == 0) {
             elItem1.classList.add("text-teal-500")
             elItem2.classList.remove("text-teal-500")
+            elItem3.classList.remove("text-teal-500")
+            renderProducts(products, tBody, evt.target.id)
         }
-        else {
+        else if(evt.target.id == 1) {
             elItem2.classList.add("text-teal-500")
             elItem1.classList.remove("text-teal-500")
+            elItem3.classList.remove("text-teal-500")
+            renderProducts(products, tBody, evt.target.id)
+        }
+        else {
+            elItem2.classList.remove("text-teal-500")
+            elItem1.classList.remove("text-teal-500")
+            elItem3.classList.add("text-teal-500")
+            renderProducts(orderProduct, tBody, evt.target.id)
         }
     }
-    renderProducts(products, tBody, evt.target.id)
 })
 
 
@@ -163,6 +176,38 @@ function renderProducts(arr, list, id) {
             list.appendChild(elTr)
         }
     })
+
+    if(id == 2) {
+        tHead.innerHTML = `
+        <tr>
+            <th class="bg-slate-200 w-[250px] p-3 rounded-l-[25px]">Имя клиента</th>
+            <th class="bg-slate-200 w-[250px] p-3">Телефон</th>
+            <th class="bg-slate-200 w-[250px] p-3">Изображение</th>
+            <th class="bg-slate-200 w-[250px] p-3">Цена(сум)</th>
+            <th class="bg-slate-200 w-[250px] p-3">Адрес</th>
+            <th class="bg-slate-200 w-[250px] p-3">Время</th>
+            <th class="bg-slate-200 w-[250px] p-3 rounded-r-[25px]">Действия</th>
+        </tr>
+        `
+        arr.map(item => {
+            let elTr = document.createElement("tr")
+            elTr.innerHTML = `
+                <td class="text-center p-1 bg-slate-300 rounded-l-[20px]">${item.name}</td>
+                <td class="text-center p-1 bg-slate-300">${item.phoneNumber}</td>
+                <td class="text-center p-1 bg-slate-300">
+                    <img class="mx-auto" src="${item.img}" alt="Render img" width="40" height="40"/>
+                </td>
+                <td class="text-center p-1 bg-slate-300 text-[20px]">${item.price}</td>
+                <td class="text-center p-1 bg-slate-300 text-[20px] order-address">${item.address}</td>
+                <td class="text-center p-1 bg-slate-300 text-[20px]">${item.time}</td>
+                <td class="text-center p-1 bg-slate-300 flex flex-col">
+                    <span class="text-[18px]">Checkbox</span>
+                    <span class="text-[18px]">Delete</span>
+                </td>
+            `
+            tBody.appendChild(elTr)
+        })
+    }
 }
 renderProducts(products, tBody, 0)
 
@@ -324,6 +369,7 @@ elSearchInput.addEventListener("keyup", function(evt) {
         elSearchList.classList.remove("open-list")
     }
 })
+
 
 elSearchInput.addEventListener("blur", function(evt) {
     elSearchList.classList.remove("open-list")

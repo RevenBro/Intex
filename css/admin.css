@@ -223,8 +223,10 @@ body {
     transform: translateY(10px);
 }
 
-/* .update-btn {
-    border: none;
-    background-color: none;
-} */
+.order-address {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 /* Admin styles start  */
